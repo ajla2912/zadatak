@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main()
+{int x, sumap=0, pron=1, ap[10], an[10], bp=0, bn=0;//x-broj,sumap-suma parnih brojeva,
+//pron-proizvod neparnih,ap-niz parnih,bp-niz neparnih,bp-deklarisemo sve parne brojeve,
+//bn-deklarisemo sve neparne brojeve 
+ do {cin >>x;//pocetni blok naredbi
+     if (x%2==0) {sumap=sumap+x; //linija koda koja nam racuna zbir prirodnih brojeva 
+                     ap[bp]=x; 
+                     bp++;}
+               else {pron=pron*x; 
+                     an[bn]=x; 
+                     bn++;}
+    }while (sumap<=pron && bp+bn < 10);//uradi zadani uslov dok je  suma manja  ili jednaka proizvodu a ukupan broj parnih i neparnih brojeva je 10 
+    
+ if (bn>0) cout << "Proizvod neparnih je " << pron << endl;//ako je broj parnih veci od  0 ispisi prvu poruku,a ako nije onda drugu
+    else cout << "Nema neparnih" << endl;//ako je broj neparnih brojeva veci od 0 onda ispisi prvu poruku a ako nije ispisi drugu
+ if (bp>0) cout << "Suma parnih je " << sumap << endl;
+    else cout << "Nema parnih" << endl;
+ for (int i=0; i < bp;i++) cout << ap[i] << " ";//ispis parnih u rastucem redosljedu
+ cout << endl;
+ for (int i=0; i < bn;i++) cout << an[i] << " ";//ispis neparnih u opadajucem redosljedu
+ cout << endl;
+  
+ return 0;
+}
